@@ -1,0 +1,12 @@
+[submodule "GPTLDRCore"]
+	path = GPTLDRCore
+	url = https://github.com/alonsitman/GPTLDRCore.git
+[submodule "GPTLDRArticle"]
+	path = GPTLDRArticle
+	url = https://github.com/alonsitman/GPTLDRArticle.git
+[submodule "GPTLDRYouTube"]
+	path = GPTLDRYouTube
+	url = https://github.com/alonsitman/GPTLDRYouTube.git
+[submodule "GPTLDRPodcast"]
+	path = GPTLDRPodcast
+	url = https://github.com/alonsitman/GPTLDRPodcast.git
