@@ -1,0 +1,15 @@
+<form action="{{ url_for('index')}}" method="post">
+
+<label for="article_url">Article URL:</label>
+<input type="text" id="article_url" name="article_url" placeholder="Enter your URL here...">
+<button type="submit">Submit</button>
+
+<br>​
+<br>​
+<br>​
+
+<textarea id="freeform" name="freeform" rows="10" cols="50" placeholder="Article TLDR">
+{{ response_placeholder }}
+</textarea>
+
+
