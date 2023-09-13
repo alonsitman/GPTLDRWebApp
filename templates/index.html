@@ -1,15 +1,108 @@
-<form action="{{ url_for('index')}}" method="post">
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Summaryzer</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet"  href="{{ url_for('static', filename='w3.css') }}">
+      </style>
+   </head>
+   <body>
+      <!-- Upper Menu Section -->
+      <div class="w3-bar w3-red w3-padding">
+         <a href="{{url_for('index')}}" class="w3-bar-item w3-button w3-padding ">Home</a>
+         <a href="#C1" class="w3-bar-item w3-button w3-right w3-padding" >About</a>
+         <a href="#C1" class="w3-bar-item w3-button w3-right w3-padding" >Contact</a>
+      </div>
+      <br/>
+      
+      <!-- Choose URL Section -->
+      <div class="w3-container w3-center">
+         <h3>TL;DR from URL (Text Article | YouTube Video | Google Podcast)</h3>
+         <form method="POST" action="/process_url">
+            <input  type="text" name="input_url" placeholder="Enter URL Here" required="true"  style="width:50%">
+            <br/>
+            <p>
+            <h4>Select your Algorithm</h4>
+            </p>
+            <select class="w3-select w3-border w3-round-large"  name="model_choice" style="width:40%">
+               <option value="default"  selected>Default</option>
+               <option value="lex_summarizer">Lex Summarizer</option>
+               <option value="luhn_summarizer">Luhn Summarizer</option>
+               <option value="isa_summarizer">Isa Summarizer</option>
+            </select>
+            <br><br>
+            <button class="w3-btn w3-blue-grey" type="reset" value="reset">Clear</button>
+            <button class="w3-btn w3-red" type="submit" value="reset">Summarize</button>
+         </form>
+      </div>
+      <br/>
 
-<label for="article_url">Article URL:</label>
-<input type="text" id="article_url" name="article_url" placeholder="Enter your URL here...">
-<button type="submit">Submit</button>
-
-<br>​
-<br>​
-<br>​
-
-<textarea id="freeform" name="freeform" rows="10" cols="50" placeholder="Article TLDR">
-{{ response_placeholder }}
-</textarea>
-
-
+      <!-- TL;DR Text Section -->
+      <div class="w3-container w3-center">
+         <h3>TL;DR from Text</h3>
+         <form method="POST" action="/process">
+            <textarea  name="input_text" cols="5" rows="4"  required="true" placeholder="Enter Text Here" style="width:40%"></textarea>
+            <br/>
+            <p>
+            <h4>Select your Algorithm</h4>
+            </p>
+            <select class="w3-select w3-border w3-round-large"  name="model_choice" style="width:40%">
+               <option value="default"  selected>Default</option>
+               <option value="lex_summarizer">Lex Summarizer</option>
+               <option value="luhn_summarizer">Luhn Summarizer</option>
+               <option value="isa_summarizer">Isa Summarizer</option>
+            </select>
+            <br>
+            <br>
+            <button class="w3-btn w3-blue-grey" type="reset" value="reset">Clear</button>
+            <button class="w3-btn w3-red" type="submit" value="reset">Summarize</button>
+            <div class="input-field">
+            </div>
+         </form>
+      </div>
+      <br>
+      
+      <!-- About & Contant Section -->
+      <div class="w3-container w3-red">
+         <div class="w3-row">
+            <div class="w3-half w3-container">
+               <h4 >About the App</h4>
+               <p>
+                  This app is a PoC for a multi-purpose TL;DR service.
+                  <br>
+                  The frontend was built with Flask and w3.css.
+                  <br>
+                  The backend was built with Sumy packages, OpenAI API, GoogleAPI and more.
+               </p>
+               Made by <a  href="https://www.linkedin.com/in/alon-sitman-3551265b/">Alon Sitman</a><br/>
+            </div>
+            <div class="w3-half w3-container w3-center">
+               <h4 id="C1">Connect With Me</h4>
+               <ul>
+                  <a href="https://www.facebook.com/alonsitman/" target="_blank" class="white-text">
+                  <i class="fa fa-facebook fa-4x"></i>
+                  </a>
+                  <!--a href="about:blank" target="_blank" >
+                  <i class="fa fa-youtube-square fa-4x"></i>
+                  </a-->
+                  <!--a href="about:blank" target="_blank" class="white-text">
+                  <i class="fa fa-medium fa-4x"></i>
+                  </a-->
+                  <a href="https://www.linkedin.com/in/alon-sitman-3551265b/" target="_blank" class="white-text">
+                  <i class="fa fa-linkedin fa-4x"></i>
+                  </a>
+                  </a>
+                  <a href="https://github.com/alonsitman" target="_blank" class="white-text">
+                  <i class="fa fa-github-square fa-4x"></i>
+                  </a>
+                  <a href="https://twitter.com/Jojosito16" target="_blank" class="white-text">
+                  <i class="fa fa-twitter fa-4x"></i>
+                  </a>
+               </ul>
+            </div>
+         </div>
+         <br>
+      </div>
+   </body>
+</html>
